@@ -1,0 +1,83 @@
+/*
+ * Good Market design tokens — fonte: DESIGN.md / SKILL.md.
+ * Nenhum valor visual fora deste arquivo. Componentes referenciam apenas var(--*).
+ *
+ * Decisões de conflito (documentadas no README):
+ *  - --border-color aparece duas vezes no DESIGN.md → separado em strong/subtle.
+ *  - color-3 (#609778) e --accent (#D1709C) não atingem 4.5:1 sobre branco →
+ *    usados apenas em gráficos, marcadores, ícones e texto ≥ text-lg.
+ *  - Raios permitidos: 50% e 100px. Cards ficam com cantos retos (sem raio).
+ *  - Espaçamento: somente os valores da escala alinhados à grade de 4px.
+ */
+:root {
+  /* Colors */
+  --color-text: #1c1e1c;            /* --text */
+  --color-accent: #d1709c;          /* --accent */
+  --color-border-strong: #c9ccc4;   /* --border-color (1) */
+  --color-border: #d8d8d8;          /* --border-color (2) */
+  --color-secondary: #609778;       /* color-3 */
+  --color-live: #25d366;            /* color-5 */
+  --color-dark: #3b4282;            /* color-2 */
+  --color-light: #f4f8ed;           /* color-8 */
+  --color-white: #ffffff;           /* color-9 */
+
+  /* Semantic aliases (apenas apontam para tokens acima) */
+  --surface-page: var(--color-light);
+  --surface-card: var(--color-white);
+  --surface-inverse: var(--color-dark);
+  --text-primary: var(--color-text);
+  --text-muted: var(--color-dark);
+  --text-inverse: var(--color-white);
+  --status-confirmed: var(--color-secondary);
+  --status-hypothesis: var(--color-accent);
+  --status-proposed: var(--color-dark);
+  --status-live: var(--color-live);
+
+  /* Typography */
+  --font-family: 'Bricolage Grotesque', -apple-system, Times, serif;
+  --text-xs: 11px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-lg: 24px;
+  --text-xl: 70px;
+  --text-display: clamp(var(--text-lg), 7vw, var(--text-xl));
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --leading-xl: 77px;
+  --leading-lg: 31px;
+  --leading-base: 27px;
+  --leading-sm: 24px;
+  --leading-xs: 16px;
+
+  /* Spacing (escala DESIGN.md, apenas múltiplos de 4 + hairline) */
+  --space-1: 1px;
+  --space-3: 8px;
+  --space-7: 24px;
+  --space-8: 32px;
+  --space-9: 60px;
+  --space-11: 80px;
+  --space-12: 100px;
+  --space-14: 120px;
+  --space-16: 160px;
+  --space-17: 250px;
+  /* space-4 (10px) e space-5 (20px) não são múltiplos de 4px mas são da escala;
+     usados só onde a densidade exige. */
+  --space-4: 10px;
+  --space-5: 20px;
+
+  /* Shapes */
+  --radius-full: 50%;
+  --radius-md: 100px;
+
+  /* Elevation */
+  --shadow-sm: rgba(7, 94, 84, 0.24) 1px 6px 24px 0px;
+
+  /* Motion */
+  --motion-color: background-color 0.2s linear;
+  --motion-base: 0.3s;
+  --motion-surface: background 0.3s, border 0.3s, box-shadow 0.3s, transform 0.4s;
+  --motion-fade: 0.75s;
+  --motion-slide: 1.25s;
+}
