@@ -10,6 +10,16 @@ npm run dev      # http://localhost:5173
 npm run build    # gera dist/index.html (arquivo único, pode ser enviado aos sócios)
 ```
 
+## Deploy na Vercel
+
+O repositório já está configurado (`vercel.json`): framework Vite, `npm ci`, `npm run build`, saída em `dist/`.
+
+1. Em [vercel.com/new](https://vercel.com/new), importe `gtrgabriel/insalata-tech`.
+2. Mantenha as configurações detectadas e clique em **Deploy**. Não há variáveis de ambiente.
+3. Cada push em `main` gera um novo deploy de produção; outros branches geram previews.
+
+A navegação usa hash (`/#/to-be`), então não é preciso configurar rewrites. Para restringir o acesso à proposta, ative **Deployment Protection** nas configurações do projeto na Vercel.
+
 ## Módulos
 
 | # | Módulo | Pergunta estratégica | Interação principal |
